@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+    <h4>Event List</h4>
+    
+    {% for event in events.events %}
+        <p>
+            <a href="{{ hostname }}/event/{{ event.eventid }}">{{ event.eventname }}</a>
+        </p>
+    {% endfor %}
+
+{% endblock %}

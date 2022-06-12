@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+    <h4>Event Name: {{ event.eventname }}</h4>
+    <p>Event Start Date: {{ event["startdate"] }} </p>
+    <p>Event End Date: {{ event["enddate"] }}</p>
+    <h2>Participant List</h2>
+    {% for participant in participants.participants %}
+        <p>{{ participant }}</p>
+    {% endfor %}
+
+{% endblock %}

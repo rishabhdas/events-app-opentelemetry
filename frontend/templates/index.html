@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events App</title>
+</head>
+<body>
+    <h2>Welcome To Events App</h2>
+    <h4>Basic UI to interact with APIs and render data</h4>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('get_events') }}">Events</a>
+    {% block body %}
+        <p>This is a Flask application.</p>
+    {% endblock %}
+</body>
+</html>
+

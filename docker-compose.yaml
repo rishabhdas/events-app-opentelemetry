@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  jaeger:
+    image: jaegertracing/all-in-one
+    ports:
+      - 6831:6831/udp
+      - 16686:16686
+  
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=eventsapp
+    ports:
+      - 5432:5432
+  
+  api:
+    build: backend
+    environment:
+      - AGENT_HOST=jaeger
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=eventsapp
+      - DB_HOST=db
+    depends_on:
+      - db
+
+  web:
+    build: frontend
+    ports:
+      - 8000:8000
+    environment:
+      - API_HOST_URL=http://api:3000
+      - AGENT_HOST=jaeger
+    depends_on:
+      - db
+      - api
+
