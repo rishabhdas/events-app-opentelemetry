@@ -34,7 +34,7 @@ $ make all
 
 ## Browse Application
 
-Web UI - http://localhost:3000/
+Web UI - http://localhost:3000/ <br>
 Jaeger - http://localhost:16686/
 
 
