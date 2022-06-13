@@ -29,12 +29,13 @@ Run the below command to bring up the POC environment
 ```bash
 $ git clone https://github.com/rishabhdas/events-app-opentelemetry.git
 $ cd events-app-opentelemetry
+$ pip install --user psycopg2-binary
 $ make all
 ```
 
 ## Browse Application
 
-Web UI - http://localhost:3000/ <br>
+Web UI - http://localhost:8000/ <br>
 Jaeger - http://localhost:16686/
 
 
