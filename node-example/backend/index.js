@@ -24,7 +24,7 @@ app.get('/api/events', (req, res) => {
     console.log(`Request received on ${req.path}`)
     const query = 'SELECT * from events;'
     console.log(`SQL Query: ${query}`)
-    const events = []
+    let events = []
     pool.query(query, (err, result) => {
         if (err) {
             console.error(`Error querying database: ${err}`)
@@ -44,6 +44,11 @@ app.get('/api/events', (req, res) => {
             success: 'true'
         })
     })
+    // console.log(events)
+    // return res.status(200).json({
+    //     events: events,
+    //     success: 'true'
+    // })
 })
 
 
