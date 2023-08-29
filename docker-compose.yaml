@@ -17,7 +17,7 @@ services:
       - 5432:5432
   
   api:
-    build: backend
+    build: node-example/backend
     environment:
       - AGENT_HOST=jaeger
       - DB_USER=postgres

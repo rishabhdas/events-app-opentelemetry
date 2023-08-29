@@ -1,3 +1,7 @@
+const { init } = require('./tracing')
+const api = require('@opentelemetry/api')
+init('events-app-backend', 'development') // calling tracer with service name and environment to view in jaegerui
+
 const express = require('express')
 const {Pool, Client} = require('pg')
 
